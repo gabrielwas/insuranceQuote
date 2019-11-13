@@ -1,4 +1,4 @@
-import { CAR_INFORMATION, CAR_COVERAGE } from "./stateInsurance";
+import { CAR_INFORMATION, CAR_COVERAGE } from "../state/stateInsurance";
 
 export const calculateQuotation = state => {
   let quotation = {
@@ -113,7 +113,7 @@ const getField = (state, fieldName) => {
   return state.dataDefinition.dataDefinitionFields.find(
     field => field.name === fieldName
   );
-}
+};
 
 export const getFieldType = (state, fieldName) => {
   return getField(state, fieldName).fieldType;
@@ -121,7 +121,9 @@ export const getFieldType = (state, fieldName) => {
 
 export const getFieldOptions = (state, fieldName) => {
   return getSafe(() =>
-    getField(state, fieldName).customProperties.options.en_US.map(option => option)
+    getField(state, fieldName).customProperties.options.en_US.map(
+      option => option
+    )
   );
 };
 
@@ -130,7 +132,7 @@ export const isFieldRequired = (state, fieldName) => {
 };
 
 export const getLabel = (state, fieldName) => {
-  let label = getField(state,fieldName).label.en_US;
+  let label = getField(state, fieldName).label.en_US;
 
   if (!label) {
     return "";
@@ -147,4 +149,19 @@ export const layoutVisitor = (state, pageName, apply) => {
         row.dataLayoutColumns.map((column, j) => apply(row, i, column, j))
       )
   );
+};
+
+export const verifyRequired = (state, pageName) => {
+  let newEmptyFields = [...state.emptyFields];
+
+  layoutVisitor(state, pageName, (row, i, column, j) => {
+    isFieldRequired(column.fieldNames[0]) &&
+    !state[pageName][column.fieldNames[0]]
+      ? (newEmptyFields = newEmptyFields.concat(column.fieldNames[0]))
+      : (newEmptyFields = newEmptyFields.filter(
+          item => item !== column.fieldNames[0]
+        ));
+  });
+
+  return newEmptyFields;
 };

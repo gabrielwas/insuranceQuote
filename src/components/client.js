@@ -1,4 +1,4 @@
-import { BASIC_INFO, CAR_INFORMATION, CAR_COVERAGE } from "./stateInsurance";
+import { BASIC_INFO, CAR_INFORMATION, CAR_COVERAGE } from "../state/stateInsurance";
 
 const host = "http://localhost:8080";
 const endpoint = `${host}/o/data-engine/v1.0`;

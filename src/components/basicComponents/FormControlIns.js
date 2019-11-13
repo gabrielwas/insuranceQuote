@@ -1,9 +1,8 @@
 import React from "react";
-import { useStateValue } from "../stateInsurance";
 import { makeStyles } from "@material-ui/core/styles";
 import FormControl from "@material-ui/core/FormControl";
-
 import { isFieldRequired } from "../util";
+import { useStateValue } from "../../state/stateInsurance";
 
 const useStyles = makeStyles(theme => ({
   formControl: {
