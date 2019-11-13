@@ -1,0 +1,18 @@
+{
+  "dataRecordValues": {
+    "firstName": "Gabriel",
+    "lastName": "Albuquerque",
+    "dateOfBirth": "05/22/1994",
+    "phoneNumber": "98786-0987",
+    "address": "St. Eng. Leonardo",
+    "country": ["Brazil"],
+    "employmentStatus": "Employee",
+    "carModel": "Toyota - Hilux",
+    "transmission": "Automatic",
+    "carYear": "2018",
+    "dailyCommute": "45",
+    "businessPurpose": "No",
+    "carCoverage": ["collisionCoverage", "uninsurancedMotoristDamage"],
+    "policyTime": 2
+  }
+}

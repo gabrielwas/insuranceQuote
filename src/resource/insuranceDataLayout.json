@@ -1,0 +1,157 @@
+{
+    "dataLayoutPages": [
+        {
+            "dataLayoutRows": [
+                {
+                    "dataLayoutColumns": [
+                        {
+                            "columnSize": 6,
+                            "fieldNames": [
+                                "firstName"
+                            ]
+                        },
+                        {
+                            "columnSize": 6,
+                            "fieldNames": [
+                                "lastName"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "dataLayoutColumns": [
+                        {
+                            "columnSize": 6,
+                            "fieldNames": [
+                                "dateOfBirth"
+                            ]
+                        },
+                        {
+                            "columnSize": 6,
+                            "fieldNames": [
+                                "phoneNumber"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "dataLayoutColumns": [
+                        {
+                            "columnSize": 12,
+                            "fieldNames": [
+                                "address"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "dataLayoutColumns": [
+                        {
+                            "columnSize": 12,
+                            "fieldNames": [
+                                "country"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "dataLayoutColumns": [
+                        {
+                            "columnSize": 12,
+                            "fieldNames": [
+                                "employmentStatus"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "description": { "en_US": "" },
+            "title": {
+                "en_US": "basicInfo"
+            }
+        },
+        {
+            "dataLayoutRows": [
+                {
+                    "dataLayoutColumns": [
+                        {
+                            "columnSize": 6,
+                            "fieldNames": [
+                                "carModel"
+                            ]
+                        },
+                        {
+                            "columnSize": 6,
+                            "fieldNames": [
+                                "transmission"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "dataLayoutColumns": [
+                        {
+                            "columnSize": 6,
+                            "fieldNames": [
+                                "carYear"
+                            ]
+                        },
+                        {
+                            "columnSize": 6,
+                            "fieldNames": [
+                                "dailyCommute"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "dataLayoutColumns": [
+                        {
+                            "columnSize": 12,
+                            "fieldNames": [
+                                "businessPurpose"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "description": { "en_US": "" },
+            "title": {
+                "en_US": "carInformation"
+            }
+        },
+        {
+            "dataLayoutRows": [
+                {
+                    "dataLayoutColumns": [
+                        {
+                            "columnSize": 12,
+                            "fieldNames": [
+                                "carCoverage"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "dataLayoutColumns": [
+                        {
+                            "columnSize": 6,
+                            "fieldNames": [
+                                "policyTime"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "description": { "en_US": "" },
+            "title": {
+                "en_US": "carCoverage"
+            }
+        }
+    ],
+    "dataLayoutKey": "InsuranceForm",
+    "paginationMode": "pagination",
+    "name": {
+        "value": "React Layout"
+    }
+}
