@@ -99,7 +99,7 @@ export const calculateQuotation = state => {
 
 export const getSafe = (fn, defaultVal) => {
   try {
-    return fn();
+    return fn() ? fn() : defaultVal
   } catch (e) {
     return defaultVal;
   }
@@ -109,7 +109,7 @@ export const isNotEmpty = column => {
   return Array.isArray(column.fieldNames) && column.fieldNames.length;
 };
 
-const getField = (state, fieldName) => {
+export const getField = (state, fieldName) => {
   return state.dataDefinition.dataDefinitionFields.find(
     field => field.name === fieldName
   );
