@@ -34,6 +34,12 @@ export const reducer = (state, action) => {
         activeStep: state.activeStep + 1
       };
 
+    case "updateBasicInfo":
+      return {
+        ...state,
+        [BASIC_INFO]: { ...state[BASIC_INFO], [action.fieldName]: action.info }
+      };
+
     case "updateProperty":
       return {
         ...state,
