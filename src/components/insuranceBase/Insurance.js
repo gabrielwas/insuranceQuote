@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import UpperBar from "../basicComponents/UpperBar";
 import Sidebar from "./Sidebar";
 import { useStylesInsurance } from "../style";
 import PageBase from "../pages/PageBase";
+import { getDataDefinitionByKey, getDataLayoutByKey } from "../client";
 import {
   StateContext,
   reducer,
@@ -13,6 +14,24 @@ const Insurance = () => {
   const classes = useStylesInsurance();
 
   const [state, dispatch] = React.useReducer(reducer, initialState);
+
+  useEffect(() => {
+    getDataDefinitionByKey(state.dataDefinitionKey).then(dataDefinition =>
+      dispatch({
+        type: "updateProperty",
+        property: "dataDefinition",
+        newValue: dataDefinition
+      })
+    );
+
+    getDataLayoutByKey(state.dataLayoutKey).then(dataLayout =>
+      dispatch({
+        type: "updateProperty",
+        property: "dataLayout",
+        newValue: dataLayout
+      })
+    );
+  }, [state.dataDefinitionKey, state.dataLayoutKey]);
 
   return (
     <div className={classes.root}>

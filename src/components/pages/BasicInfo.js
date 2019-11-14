@@ -1,14 +1,15 @@
 import React from "react";
-import { useStateValue } from "../../state/stateInsurance";
+import { useStateValue, BASIC_INFO } from "../../state/stateInsurance";
 import ButtonIns from "../basicComponents/ButtonIns";
 import { CardContent } from "@material-ui/core";
+import Fields from "../fieldComponents/Fields";
 
 const BasicInfo = () => {
   const { dispatch } = useStateValue();
 
   return (
     <CardContent>
-      {/* Render the fields here */}
+      <Fields pageName={BASIC_INFO} />
 
       <ButtonIns
         label="Next"
