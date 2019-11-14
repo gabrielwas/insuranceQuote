@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import QuotationCard from "../insuranceBase/QuotationCard";
+import BasicInfo from "./BasicInfo";
 
 const QuotationStep = ({ children, stepTitle }) => {
   return (
@@ -23,14 +24,18 @@ const QuotationStep = ({ children, stepTitle }) => {
 const PageStep = ({ step }) => {
   switch (step) {
     case 1:
-      return <QuotationStep stepTitle="Basic Information" />;
+      return (
+        <QuotationStep stepTitle="Basic Information">
+          <BasicInfo />
+        </QuotationStep>
+      );
     case 2:
     case 3:
     //Car Information
     case 4:
-        //Quotes
+    //Quotes
     default:
-        break;
+      break;
   }
 };
 
