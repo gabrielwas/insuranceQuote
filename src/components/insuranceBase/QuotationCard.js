@@ -1,8 +1,11 @@
 import React from "react";
 import { Card, CardContent, Typography } from "@material-ui/core";
 import CardLineIns from "../basicComponents/CardLineIns";
+import { useStateValue } from "../../state/stateInsurance";
 
 const QuotationCard = () => {
+  const { state } = useStateValue();
+
   return (
     <Card>
       <CardContent>
@@ -10,11 +13,25 @@ const QuotationCard = () => {
           Quotation
         </Typography>
 
-        <CardLineIns label="Basic" value="$$$" margin={14} />
+        <CardLineIns
+          label="Basic"
+          value={state.quotationInfo.basicPrice}
+          margin={14}
+        />
 
-        <CardLineIns label="Extra" value="$$$" margin={50} />
+        <CardLineIns
+          label="Extra"
+          value={state.quotationInfo.extraPrice}
+          margin={50}
+        />
 
-        <CardLineIns label="Total" value="$$$" margin={0} />
+        <CardLineIns
+          label="Total"
+          value={
+            state.quotationInfo.basicPrice + state.quotationInfo.extraPrice
+          }
+          margin={0}
+        />
       </CardContent>
     </Card>
   );
