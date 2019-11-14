@@ -2,6 +2,7 @@ import React from "react";
 import { useStateValue } from "../../../state/stateInsurance";
 import StepsIns from "../../basicComponents/StepsIns";
 import { CardContent } from "@material-ui/core";
+import StepCarInformation from "./StepCarInformation";
 
 const CarInsurance = () => {
   const { state } = useStateValue();
@@ -12,7 +13,9 @@ const CarInsurance = () => {
     <>
       <StepsIns steps={steps} activeStep={state.activeStep} />
 
-      <CardContent></CardContent>
+      <CardContent>
+        <StepCarInformation />
+      </CardContent>
     </>
   );
 };

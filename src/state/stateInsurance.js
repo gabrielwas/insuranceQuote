@@ -1,4 +1,5 @@
 import { createContext, useContext } from "react";
+import { calculateQuotation } from "../components/util";
 
 export const BASIC_INFO = "basicInfo";
 export const CAR_INFORMATION = "carInformation";
@@ -27,6 +28,9 @@ export const initialState = {
 };
 
 export const reducer = (state, action) => {
+
+  let newState;
+
   switch (action.type) {
     case "nextStep":
       return {
@@ -39,6 +43,22 @@ export const reducer = (state, action) => {
         ...state,
         [BASIC_INFO]: { ...state[BASIC_INFO], [action.fieldName]: action.info }
       };
+
+    case "updateCarInformation":
+      newState = {
+        ...state,
+        [CAR_INFORMATION]: {
+          ...state[CAR_INFORMATION],
+          [action.fieldName]: action.info
+        }
+      };
+
+      newState = {
+        ...newState,
+        quotationInfo: calculateQuotation(newState)
+      };
+
+      return newState;
 
     case "updateProperty":
       return {
