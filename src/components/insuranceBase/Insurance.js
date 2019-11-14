@@ -42,7 +42,7 @@ const Insurance = () => {
 
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          <PageBase />
+          <PageBase step={state.activeStep} />
         </main>
       </StateContext.Provider>
     </div>
