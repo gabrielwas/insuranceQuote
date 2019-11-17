@@ -12,9 +12,12 @@ import {
   postDataRecordCollection
 } from "../../client";
 import { getSafe } from "../../util";
+import SnackBarInsurance from "../../basicComponents/SnackBarInsurance";
 
 const StepCarCoverage = () => {
   const { state, dispatch } = useStateValue();
+
+  const [open, setOpen] = React.useState(false);
 
   const handleClickBack = () => {
     dispatch({
@@ -44,6 +47,8 @@ const StepCarCoverage = () => {
         ? saveRecord(state, page.items[0].id)
         : saveDataCollectionAndRecord()
     );
+
+    setOpen(true);
   };
 
   return (
@@ -52,7 +57,9 @@ const StepCarCoverage = () => {
 
       <ButtonIns label="Back" handleClick={handleClickBack} />
 
-      <ButtonIns label="Finish" handleClick={handleClickFinish}/>
+      <ButtonIns label="Finish" handleClick={handleClickFinish} />
+
+      <SnackBarInsurance open={open} setOpen={setOpen} />
     </>
   );
 };
