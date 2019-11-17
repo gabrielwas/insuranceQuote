@@ -60,6 +60,33 @@ export const reducer = (state, action) => {
 
       return newState;
 
+    case "updateCarCoverage":
+      newState = action.parentFieldName
+        ? {
+            ...state,
+            [CAR_COVERAGE]: {
+              ...state[CAR_COVERAGE],
+              [action.parentFieldName]: {
+                ...state[CAR_COVERAGE][action.parentFieldName],
+                [action.childFieldName]: action.info
+              }
+            }
+          }
+        : {
+            ...state,
+            [CAR_COVERAGE]: {
+              ...state[CAR_COVERAGE],
+              [action.fieldName]: action.info
+            }
+          };
+
+      newState = {
+        ...newState,
+        quotationInfo: calculateQuotation(newState)
+      };
+
+      return newState;
+
     case "updateProperty":
       return {
         ...state,
