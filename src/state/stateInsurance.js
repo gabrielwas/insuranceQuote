@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { calculateQuotation } from "../components/util";
+import { calculateQuotation, layoutVisitor } from "../components/util";
 
 export const BASIC_INFO = "basicInfo";
 export const CAR_INFORMATION = "carInformation";
@@ -28,15 +28,41 @@ export const initialState = {
 };
 
 export const reducer = (state, action) => {
-
   let newState;
+
+  const isRequired = fieldName => {
+    return state.dataDefinition.dataDefinitionFields.find(
+      field => field.name === fieldName
+    ).required;
+  };
+
+  const verifyRequired = pageName => {
+    let newEmptyFields = [...state.emptyFields];
+
+    layoutVisitor(state, pageName, (row, i, column, j) => {
+      isRequired(column.fieldNames[0]) && !state[pageName][column.fieldNames[0]]
+        ? (newEmptyFields = newEmptyFields.concat(column.fieldNames[0]))
+        : (newEmptyFields = newEmptyFields.filter(
+            item => item !== column.fieldNames[0]
+          ));
+    });
+
+    return newEmptyFields;
+  };
 
   switch (action.type) {
     case "nextStep":
-      return {
-        ...state,
-        activeStep: state.activeStep + 1
-      };
+      let newEmptyFields = verifyRequired(BASIC_INFO);
+
+      return newEmptyFields.length === 0
+        ? {
+            ...state,
+            activeStep: state.activeStep + 1
+          }
+        : {
+            ...state,
+            emptyFields: newEmptyFields
+          };
 
     case "updateBasicInfo":
       return {
