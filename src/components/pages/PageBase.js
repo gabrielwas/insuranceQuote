@@ -5,6 +5,7 @@ import CardHeader from "@material-ui/core/CardHeader";
 import QuotationCard from "../insuranceBase/QuotationCard";
 import BasicInfo from "./BasicInfo";
 import CarInsurance from "./carInsurance/CarInsurance";
+import Quotes from "./quotes/Quotes";
 
 const QuotationStep = ({ children, stepTitle }) => {
   return (
@@ -38,7 +39,11 @@ const PageStep = ({ step }) => {
         </QuotationStep>
       );
     case 4:
-    //Quotes
+      return (
+        <Grid item xs={11}>
+          <Quotes />
+        </Grid>
+      );
     default:
       break;
   }
