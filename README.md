@@ -2,6 +2,8 @@
 
 https://drive.google.com/a/liferay.com/file/d/12_2uIM9SPpbDAkW9dwXrQA5tFThLQoW5/view?usp=drivesdk
 
+https://drive.google.com/file/d/1W4LyK1hmqgkSMt1ZWO4vnEqQ_8TYV_aI/view?usp=sharing
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
