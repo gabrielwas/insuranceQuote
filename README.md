@@ -1,12 +1,12 @@
-## Liferay Portal CE
+## GS BU Meeting slides
+https://drive.google.com/open?id=1PowEGS6cues7BmVuvt5eP8_tGpYbG0-O
 
+## Liferay Portal CE
 https://drive.google.com/a/liferay.com/file/d/12_2uIM9SPpbDAkW9dwXrQA5tFThLQoW5/view?usp=drivesdk
 
-https://drive.google.com/file/d/1W4LyK1hmqgkSMt1ZWO4vnEqQ_8TYV_aI/view?usp=sharing
+## Available Scripts
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
 
 In the project directory, you can run:
 
