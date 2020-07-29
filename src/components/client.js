@@ -22,6 +22,36 @@ export const getDataDefinitionByKey = dataDefinitionKey => {
   ).then(res => res.json());
 };
 
+export const postDataDefinition = dataDefinition => {
+  return fetch(
+    `${endpoint}/sites/${siteId}/data-definitions`,
+    {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        Authorization: "Basic " + base64.encode(username + ":" + password),
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(dataDefinition)
+    }
+  ).then(res => res.json());
+};
+
+export const postDataLayout = (dataDefinitionId, dataLayout) => {
+  return fetch(
+    `${endpoint}/data-definitions/${dataDefinitionId}/data-layouts`,
+    {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        Authorization: "Basic " + base64.encode(username + ":" + password),
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(dataLayout)
+    }
+  ).then(res => res.json());
+};
+
 export const getDataLayoutByKey = dataLayoutKey => {
   return fetch(`${endpoint}/sites/${siteId}/data-layouts/${dataLayoutKey}`, {
     method: "GET",

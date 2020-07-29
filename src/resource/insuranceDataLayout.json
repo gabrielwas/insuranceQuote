@@ -149,7 +149,7 @@
             }
         }
     ],
-    "dataLayoutKey": "InsuranceForm",
+    "dataLayoutKey": "INSURANCEFORM",
     "paginationMode": "pagination",
     "name": {
         "value": "React Layout"

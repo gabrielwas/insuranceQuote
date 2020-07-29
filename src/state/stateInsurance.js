@@ -10,8 +10,8 @@ export const StateContext = createContext();
 export const useStateValue = () => useContext(StateContext);
 
 export const initialState = {
-  dataDefinitionKey: "InsuranceForm",
-  dataLayoutKey: "InsuranceForm",
+  dataDefinitionKey: "INSURANCEFORM",
+  dataLayoutKey: "INSURANCEFORM",
 
   activeStep: 1,
 
