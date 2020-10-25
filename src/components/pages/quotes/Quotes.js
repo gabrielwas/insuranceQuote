@@ -21,12 +21,14 @@ const Quotes = () => {
       });
     };
 
-    getDataRecordCollections(state.dataDefinition.id, "").then(page => {
-      if (page.items) {
-        page.items.forEach(collection => recordsByCollection(collection));
-      }
-    });
-  }, [state.dataDefinition.id]);
+    if(state.dataDefinition){
+      getDataRecordCollections(state.dataDefinition.id, "").then(page => {
+        if (page.items) {
+          page.items.forEach(collection => recordsByCollection(collection));
+        }
+      });
+    }
+  }, [state.dataDefinition]);
 
   return (
     <>

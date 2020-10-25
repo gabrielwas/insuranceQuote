@@ -20,15 +20,15 @@ const QuotesTable = ({ dataRecords, collectionName }) => {
       label: fieldLabel,
       name: fieldName,
       childFieldName: fieldChildFieldName,
-      isCheckboxMultiple: fieldIsMultipleCheck
+      isCheckboxMultiple: fieldIsMultipleCheck,
     };
   };
 
   const getfieldLabelsFromPage = () => {
     return state.dataDefinition.dataDefinitionFields
-      .map(field =>
+      .map((field) =>
         field.fieldType === "checkbox_multiple"
-          ? field.customProperties.options.en_US.map(option =>
+          ? field.customProperties.options.en_US.map((option) =>
               createField(option.label, field.name, true, option.value)
             )
           : createField(field.label.en_US, field.name, false, undefined)
@@ -51,23 +51,23 @@ const QuotesTable = ({ dataRecords, collectionName }) => {
       value = dataRecord.dataRecordValues[field.name];
     }
 
-    return value;
+    return value.en_US;
   };
 
   return (
     <TableIns tableName={collectionName}>
       <TableHead>
         <TableRow>
-          {getfieldLabelsFromPage().map(field => (
+          {getfieldLabelsFromPage().map((field) => (
             <TableCell key={field.label}>{field.label}</TableCell>
           ))}
         </TableRow>
       </TableHead>
       <TableBody>
         {getSafe(() =>
-          dataRecords.map(dataRecord => (
+          dataRecords.map((dataRecord) => (
             <TableRow key={dataRecord.id}>
-              {getfieldLabelsFromPage().map(field => (
+              {getfieldLabelsFromPage().map((field) => (
                 <TableCell key={field.childFieldName || field.name}>
                   {getDataRecordValue(field, dataRecord) || " - "}
                 </TableCell>

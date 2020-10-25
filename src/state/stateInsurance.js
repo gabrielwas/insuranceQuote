@@ -13,7 +13,7 @@ export const initialState = {
   dataDefinitionKey: "INSURANCEFORM",
   dataLayoutKey: "INSURANCEFORM",
 
-  activeStep: 1,
+  activeStep: 4,
 
   [BASIC_INFO]: {},
   [CAR_INFORMATION]: {},
